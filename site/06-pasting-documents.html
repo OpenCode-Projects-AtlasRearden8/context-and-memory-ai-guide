@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>Pasting Documents: The Smart Way — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 6. Pasting documents</p>
+<h1 id="pasting-documents-the-smart-way">Pasting Documents: The Smart Way</h1>
+<hr>
+<p>At some point every AI user faces it: &quot;I need the AI to actually read this file.&quot; A contract. A syllabus. A 12-page PDF. Your own meeting notes.</p>
+<p>Pasting is the honest way to do it in most chat tools, and when done well it's <em>powerful</em> — the difference between the AI answering in generalities and the AI answering about <em>your</em> stuff. Done badly, it drowns the whiteboard and makes everything worse. Here's the smart way.</p>
+<h2 id="the-golden-rule-paste-with-a-purpose">The golden rule: paste with a purpose</h2>
+<p>Every paste should come with an <strong>on-ramp message</strong> that tells the AI what the document is and what you want done with it. The worst paste in the world is a document with no instructions — the AI guesses why you sent it, and its guess sets the tone for the whole session.</p>
+<p>Bad:</p>
+<pre><code>[pastes 8 pages of meeting notes]
+</code></pre>
+<p>Good:</p>
+<pre><code>Below are my meeting notes from Tuesday. I need two things:
+1. A bullet list of every deadline mentioned.
+2. Which deadline is tightest and why. 
+
+Notes:
+---
+[the notes]
+---
+</code></pre>
+<p>Same document. Vastly better answer, because attention gets pointed, not just fed.</p>
+<h2 id="feed-in-the-right-format">Feed in the right format</h2>
+<p>When a tool accepts a file upload, use it — parsed text beats pasted text. When pasting, help the AI see <em>structure</em>:</p>
+<ul><li><strong>Keep headings and bullets</strong> from the original — they're the AI's map.</li><li><strong>Tables are fine</strong> — AI handles pasted tables well.</li><li><strong>PDFs pasted as text can arrive garbled</strong> (columns scrambled, page numbers interleaved). If you see gibberish in chat, that's a paste artifact, not an AI fault — try re-copying from the PDF viewer's text selection, or reflowing through a text editor first.</li><li><strong>Strip the junk when you can</strong>: repeating navigational boilerplate, headers/footers repeated per page, signature blocks. They cost tokens and distract.</li></ul>
+<h2 id="segment-before-the-ai-drowns">Segment before the AI drowns</h2>
+<p>The full 60-page PDF is usually <em>not</em> the thing you need read. Segment:</p>
+<ol><li><strong>Cut to the relevant section.</strong> For a contract question about payment, paste the payment clause and its neighbors, not all 60 pages.</li><li><strong>If you can't cut, direct the AI where to look</strong>: &quot;The contract is below. Focus ONLY on the parts dealing with refunds.&quot;</li><li><strong>Multiple documents?</strong> Label each:</li></ol>
+<pre><code>DOCUMENT 1 — my current listing description:
+---
+[the text]
+---
+
+DOCUMENT 2 — the competitor's listing:
+---
+[the text]
+---
+
+Task: list what Document 2 does that Document 1 doesn't.
+</code></pre>
+<ol><li><strong>Huge and unavoidable?</strong> Use a two-step: first send the doc and ask the AI to summarize it into a working overview. Then start a <em>fresh chat</em> with the compact overview plus your real task. (This is the Chapter 5 pattern — it works for documents as well as conversations.)</li></ol>
+<h2 id="documents-age-badly-in-long-chats">Documents age badly in long chats</h2>
+<p>A subtle trap: pasting a document <em>early</em> in a long session means by message 40 of tweak, iterate, rework — the doc is 30 messages of whiteboard ago, fading from the AI's attention right when precision matters most. Two moves:</p>
+<ul><li><strong>Re-show the relevant chunk</strong> when deep into iteration: &quot;Here's the section again for reference: — [paragraph].&quot;</li><li>Or start fresh with a summary + just the relevant excerpt (Chapter 4), which is cleaner still.</li></ul>
+<h2 id="privacy-is-a-token-question-too">Privacy is a token question too</h2>
+<p>Anything pasted is potential cross-chat memory, training data (depending on that tool's settings — most major tools let you opt out), or exposure if the account is shared. The friendly rule:</p>
+<ul><li><strong>Strip personal identifiers before pasting wherever you can.</strong> &quot;My client&quot; not the client's name; &quot;[redacted]&quot; not the bank account.</li><li><strong>Check your tool's data settings</strong> (Chapter 8). Most let you prevent inputs being used for training.</li><li><strong>Sensitive docs (medical, legal, financial) for real-world decisions</strong>: use AI to understand <em>structure and terms</em>, but never paste in liftable private data to get an answer you'd then act on without a professional. Fun fact: this is an educational guide by a nurse, not a lawyer — same discipline applies to me to you.</li></ul>
+<h2 id="try-this">Try this</h2>
+<ol><li>Take a document you've actually pasted lately. Write (for yourself) the one-sentence purpose: <em>what would I want the AI to do with this?</em> Now write the full on-ramp message and paste it with purpose.</li><li>Take a long doc and paste only the specific ~2 relevant pages + a crisp question. Ask: &quot;Quote the evidence you used.&quot; Now tell whether it found the <em>right</em> paragraph — then compare that against your memory of the full-doc answer.</li><li>If your tool has file upload or a document library feature — use it next time instead of a paste; watch how structure survives better.</li></ol>
+<p><strong>Next:</strong> <a href="07-why-answers-drift.html">Chapter 7 — Why Answers Drift</a></p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="05-summarize-and-pin.html">&larr; 5. Summarize & pin</a><a class="side" style="text-align:right" href="07-why-answers-drift.html">7. Why answers drift &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>

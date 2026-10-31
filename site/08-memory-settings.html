@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>Memory Settings, Decoded — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 8. Memory settings</p>
+<h1 id="memory-settings-decoded">Memory Settings, Decoded</h1>
+<hr>
+<p>Every major AI assistant has memory-ish settings, and each one names them something different and hides them in a different place. This chapter is the decoder ring. Menus move constantly, so this is organized by <strong>concept first, tool second</strong> — when the buttons change (they will), the concepts will still find them.</p>
+<h2 id="the-universal-settings">The universal settings</h2>
+<p>Almost every assistant with cross-chat memory has some version of these four knobs:</p>
+<h3 id="1-saved-memory-personalization">1. Saved Memory / Personalization</h3>
+<p><strong>What it does:</strong> The tool stores small facts about you (&quot;works in healthcare,&quot; &quot;prefers plain English,&quot; &quot;runs an eBay store&quot;) and injects them into future chats.</p>
+<p><strong>Where:</strong> Usually under Settings → Personalization / Memory.</p>
+<p><strong>How it's used:</strong> You usually say &quot;remember that…&quot; in chat, or the tool auto-records from conversation. You can almost always <strong>view the list and delete items</strong> — go look at it once a month; auto-memory records things you didn't realize were &quot;facts.&quot;</p>
+<p><strong>Best for:</strong> durable identity-level facts. Worst for: project details (they pollute other chats).</p>
+<h3 id="2-custom-instructions-profile">2. Custom Instructions / Profile</h3>
+<p><strong>What it does:</strong> A standing &quot;about me&quot; block applied to <em>every</em> chat — tone, role, format wants.</p>
+<p><strong>Where:</strong> Settings → Personalization → Custom Instructions / Profile.</p>
+<p><strong>Best practice:</strong> General prefs only. &quot;Plain English, no emoji, be direct, assume I'm a beginner until I say otherwise.&quot; Project context lives in your per-chat context header (Chapter 5), not here.</p>
+<h3 id="3-trainingdata-controls">3. Training/data controls</h3>
+<p><strong>What it does:</strong> Whether your chats are used for model training and how long they're retained.</p>
+<p><strong>Where:</strong> Settings → Data Controls / Privacy.</p>
+<p><strong>The friendly read:</strong> If the &quot;improve the model for everyone&quot; toggle bothers you, find it and flip it — you lose nothing you'd notice. Knowing this exists is the whole point.</p>
+<h3 id="4-chat-history-retention">4. Chat history retention</h3>
+<p><strong>What it does:</strong> How long old chats are kept; some tools offer auto-delete after 30 days or manual-only.</p>
+<p><strong>Where:</strong> Settings → Data Controls → Retention.</p>
+<p><strong>The friendly read:</strong> Auto-delete is fine for casual use, but if you rely on reopening old chats for reference (many of us do), set retention thoughtfully — deleting work archives can sting more than a privacy slider feels good.</p>
+<h2 id="tool-by-tool-quick-map">Tool-by-tool quick map</h2>
+<blockquote>A note on maps: <strong>names and locations below are a snapshot in time — menus get renamed and shipped around constantly.</strong> When a tool contradicts this table, trust the tool. Navigate by names you now recognize from the universal settings above — that's the decoder-ring skill.</blockquote>
+<table>
+<thead><tr><th>Tool</th><th>Memory feature lives under…</th><th>Tips</th></tr></thead>
+<tbody>
+<tr><td><strong>ChatGPT</strong></td><td>Settings → Personalization → Memory; &quot;Manage memories&quot; lists facts</td><td>Custom Instructions is a separate slot; &quot;Temporary chat&quot; runs memory-free</td></tr>
+<tr><td><strong>Claude</strong></td><td>Settings → (Profile/Privacy area); &quot;Projects&quot; give per-project memory instead of global</td><td>Projects are the professional's best friend: knowledge base + instructions scoped per project</td></tr>
+<tr><td><strong>Gemini</strong></td><td>Settings/apps area; &quot;Saved info&quot; for memories</td><td>Tied to your Google account; Saved info items are individually editable</td></tr>
+<tr><td><strong>Copilot (Microsoft)</strong></td><td>Tied to Microsoft account personalization controls</td><td>Enterprise versions differ sharply from consumer ones — check which you're on</td></tr>
+<tr><td><strong>Local AI (Ollama, LM Studio, etc.)</strong></td><td>Usually none by default — every chat starts blank</td><td>That's a feature: <em>you</em> control all context; pair with Chapter 5's header technique always</td></tr>
+</tbody>
+</table>
+<p>Local AI folks: no auto-memory means the discipline of summarizing is <em>even more</em> valuable — your context header is the only memory that exists.</p>
+<h2 id="three-habits-worth-stealing">Three habits worth stealing</h2>
+<ol><li><strong>Monthly memory audit.</strong> View the saved-memories list. Delete anything stale or wrong (&quot;I moved apartments in 2024&quot; embarrassing no one needs).</li><li><strong>Separate identity from project.</strong> Identity facts and tone rules → profile/custom instructions. Project state → context header per chat. Crossing these wires is why your grocery-list chat suddenly knows your quarterly revenue.</li><li><strong>Know your fresh-chat behavior.</strong> Some tools show &quot;memories applied&quot; indicators or let you start memory-free chats. If you're ever working with private material, a memory-free or temporary chat is a kindness to your future self.</li></ol>
+<h2 id="a-word-on-shared-devices">A word on shared devices</h2>
+<p>If anyone else touches your computer or account: chat history is account history. The memory list contains your facts. Chapter 6's privacy discipline (strip identifiers, redact where you can) pairs with this. It's your AI; make it a good housemate.</p>
+<h2 id="try-this">Try this</h2>
+<ol><li>Do the audit right now: open your main tool, find the memory list, and read it out loud (seriously — reading aloud reveals what's stale faster than scanning).</li><li>Write your custom instructions block from today, not from memory of what you set up months ago. Plain English. Five lines max.</li><li>If your tool has Projects (Claude) or equivalent: think about your busiest recurring task and whether scoping it to its own project would keep its context out of your daily chatter.</li></ol>
+<hr>
+<p><strong>That's the manual.</strong> Now the extras: <a href="worksheet.html">the worksheet</a> to audit your own habits, <a href="checklist.html">the checklist</a> for when chats feel off, and <a href="glossary.html">the glossary</a> for the terms everyone else pretends you already know.</p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="07-why-answers-drift.html">&larr; 7. Why answers drift</a><a class="side" style="text-align:right" href="worksheet.html">Worksheet &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>Summarize and Pin: Carrying Context Forward — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 5. Summarize &amp; pin</p>
+<h1 id="summarize-and-pin-carrying-context-forward">Summarize and Pin: Carrying Context Forward</h1>
+<hr>
+<p>Here's the technique that separates people whose AI sessions feel effortless from people whose sessions feel like babysitting: <strong>they control what goes into each fresh chat — on purpose, in writing, at the top.</strong></p>
+<p>Call it a <strong>context header</strong> — a small block of text pasted as your first message that says: <em>who I am, what I'm working on, the decisions we've made, the rules to follow.</em> Then everything after that sits on a clean whiteboard with everything important already written on it.</p>
+<h2 id="why-paste-a-summary-instead-of-just-talking">Why paste a summary instead of &quot;just talking&quot;?</h2>
+<p>Three reasons:</p>
+<ol><li><strong>Position matters.</strong> Content near the top of a context window and content near the end both get strong attention; content buried in the middle gets the least. Your critical facts at the top of the chat sit in prime attention territory.</li><li><strong>You control what's kept.</strong> Automatic memory and compaction (Chapter 3) choose for you. A hand-built header keeps exactly <em>your</em> priorities.</li><li><strong>It resets every time.</strong> Any chat that starts with a context header starts ahead — fewer misunderstandings, fewer re-explanations, less drift.</li></ol>
+<h2 id="the-6-part-context-header-template">The 6-part context header template</h2>
+<p>Copy this. Fill the bold parts. Delete what doesn't apply. Save it in your notes app so you can paste it any time.</p>
+<pre><code>CONTEXT HEADER
+
+1. WHO I AM: [your role — e.g., &quot;small-business owner, eBay reseller, health worker by day&quot;]
+
+2. WHAT I'M WORKING ON: [the current project, in 1-2 sentences]
+
+3. DECISIONS ALREADY MADE: [bullets — e.g., &quot;site name is fixed,&quot; &quot;budget is $200,&quot; &quot;we chose plain English over jargon&quot;]
+
+4. RULES TO FOLLOW: [how you want answers — e.g., &quot;plain English,&quot; &quot;keep replies under 300 words,&quot; &quot;no jargon without defining it,&quot; &quot;bullet points over walls of text&quot;]
+
+5. WHAT I DON'T WANT: [e.g., &quot;don't re-explain basics,&quot; &quot;no melodrama,&quot; &quot;don't suggest tools I've already rejected&quot;]
+
+6. OPEN QUESTIONS: [what's still unresolved — this tells the AI where to focus]
+</code></pre>
+<p>That's 150-250 words. Tiny cost, huge return — it lives in prime attention for the entire chat.</p>
+<h2 id="what-goes-in-a-summary-and-what-doesnt">What goes in a summary — and what doesn't</h2>
+<p>In the header:</p>
+<ul><li><strong>Concrete decisions</strong> (&quot;we chose option B&quot;), not the debate about it</li><li><strong>Standing rules</strong> you want applied to every answer</li><li><strong>Names of things</strong> — tools, projects, people, deadlines — because names are the first victim of drift</li></ul>
+<p>Not in the header:</p>
+<ul><li>History (&quot;then on Tuesday we tried X but it failed&quot; — only matters if the lesson changed a decision)</li><li>The full text of every document — paste docs per Chapter 6, only when the chat needs them</li><li>Everything. If <em>everything</em> is important, <em>nothing</em> is. Let the header be the shortlist.</li></ul>
+<h2 id="pinning-saving-and-the-tool-side-versions">Pinning, saving, and the tool-side versions</h2>
+<p>Different tools give you ways to make things <em>stickier</em> than an ordinary first message:</p>
+<ul><li><strong>Pin/star a message</strong> — some tools let you bookmark a message so it stays prominent. Use it for your context header and for mid-task pivots (&quot;we're switching to plan B now&quot;).</li><li><strong>Custom instructions / system prompts</strong> — a standing &quot;ABOUT YOU&quot; block the tool appends to <em>every</em> chat beyond the whiteboard. Put your identity-level prefs there — tone, role, structure. Project-specific stuff does NOT belong there (it pollutes every unrelated chat). Chapter 8's tour shows where.</li><li><strong>Saved memories</strong> — the tool remembers atomic facts across chats (&quot;user is a nurse,&quot; &quot;user hates emoji&quot;). Great for durable facts, mediocre for project context, occasionally wrong in amusing ways — inspect it occasionally.</li><li><strong>Timeless rule:</strong> whatever the tool auto-remembers, you can usually view and edit it — and <em>you</em> should. Auto-memory works best when it records facts you'd have written anyway.</li></ul>
+<h2 id="the-re-anchor-move">The &quot;re-anchor&quot; move</h2>
+<p>Mid-task drift happens even in good chats. When it does, don't argue with the AI — re-anchor:</p>
+<blockquote><strong>&quot;Quick reset. Re-read my context header. We're working on [TOPIC]. Confirm what you think the current focus is, then continue from there.&quot;</strong></blockquote>
+<p>That's it. No scolding, no re-explaining from memory. The header — still sitting there at the top of the chat — does the work, and asking for a confirmation-of-focus make the AI re-read it.</p>
+<h2 id="try-this">Try this</h2>
+<ol><li>Fill out the 6-part template for your current busiest project, right now, for real. Save it.</li><li>Open a fresh chat, paste it, and give the chat a real task. Compare the answer's <em>relevance</em> (not cleverness) to what your usual chats produce.</li><li>If your tool lets you pin or star messages: pin the header in your next working chat so it's always one scroll away.</li><li>Check whether your tool has <strong>custom instructions</strong> — and be honest: does what's there match how you actually like answers? Fix it today. (Tour in Chapter 8.)</li></ol>
+<p><strong>Next:</strong> <a href="06-pasting-documents.html">Chapter 6 — Pasting Documents: The Smart Way</a></p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="04-when-to-start-fresh.html">&larr; 4. Fresh chats</a><a class="side" style="text-align:right" href="06-pasting-documents.html">6. Pasting documents &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>Tokens: How AI Reads Your Words — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 1. Tokens</p>
+<h1 id="tokens-how-ai-reads-your-words">Tokens: How AI Reads Your Words</h1>
+<hr>
+<p>You know how you read by words? AI doesn't. AI reads in <strong>tokens</strong> — and this one quirk explains a surprising number of &quot;why did it do <em>that?</em>&quot; moments.</p>
+<h2 id="whats-a-token-actually">What's a token, actually?</h2>
+<p>A token is a chunk of text — usually a chunk of a word, sometimes a whole word, sometimes punctuation, sometimes a single weird character. The AI was trained by breaking enormous amounts of text into these chunks, so it thinks in them.</p>
+<p>Rough rules of thumb (they vary by model, and that's fine):</p>
+<table>
+<thead><tr><th>Text</th><th>Rough tokens</th></tr></thead>
+<tbody>
+<tr><td>&quot;the&quot;, &quot;a&quot;, &quot;cat&quot;</td><td>~1 token each</td></tr>
+<tr><td>&quot;hello!&quot;</td><td>~2 tokens (word + punctuation)</td></tr>
+<tr><td>&quot;contradictory&quot;</td><td>~3-4 tokens</td></tr>
+<tr><td>A RFKJx7 serial number</td><td>can be many tokens</td></tr>
+<tr><td>100 words of English</td><td>~75-130 tokens</td></tr>
+<tr><td>One page of a book</td><td>~300-600 tokens</td></tr>
+</tbody>
+</table>
+<p>That last row is the handy one: <strong>100 words ≈ 100-ish tokens, give or take.</strong> You never need exact numbers for daily use — you need the <em>feel</em> for size.</p>
+<h2 id="why-should-you-care-three-real-reasons">Why should you care? Three real reasons.</h2>
+<h3 id="reason-1-tokens-are-the-unit-of-the-ais-attention">Reason 1: Tokens are the unit of the AI's attention</h3>
+<p>Everything in a chat — your messages, the AI's replies, pasted documents — is made of tokens, and every one of those tokens sits in the AI's working memory. When the container gets full (Chapter 2), what gets squeezed out gets <em>forgotten</em>. Long pasted documents? That's tokens.</p>
+<h3 id="reason-2-weird-characters-make-ai-spend-weird-attention">Reason 2: Weird characters make AI spend weird attention</h3>
+<p>Have you ever pasted a serial number, a URL, a chunk of code, or a table of numbers and watched the AI stumble? Those tend to tokenize poorly — turning into many small tokens — which makes them eat more of the window <em>and</em> be harder for the model to reason about. Same text, wildly different token cost:</p>
+<ul><li><code>Hello, I need help with my project</code> — about 8 tokens</li><li><code>x7F-99aB-Qd3!</code> — could be 10+ tokens, and harder to &quot;read&quot;</li></ul>
+<h3 id="reason-3-long-is-a-feeling-tokens-make-it-measurable-ish">Reason 3: &quot;Long&quot; is a feeling, tokens make it measurable-ish</h3>
+<p>When a chat <em>feels</em> long, check your token estimate: your messages, the AI's messages, and any docs — add the word counts, divide by roughly 0.75 for tokens (or just call 150 words ≈ 200 tokens and stop there). If you're guessing at tens of thousands, it's time for a fresh chat with a summary. That's chapters 4 and 5.</p>
+<h2 id="the-counterintuitive-part-shorter-chats-often-beat-detailed-">The counterintuitive part: shorter chats often beat detailed ones</h2>
+<p>Beginners think the winning move is to stuff every fact into the chat. What actually happens: the model's attention gets spread across a mountain of text, old instructions blur, and answers get generic.</p>
+<p>The fix isn't more detail — it's <em>relevant</em> detail, kept current. Which is exactly what Chapters 5 and 6 practice.</p>
+<h2 id="try-this">Try this</h2>
+<ol><li>Ask your AI: <strong>&quot;How many tokens do you estimate this conversation has used so far? Are we deep into the context window?&quot;</strong> The number will be an estimate — models can't count their own tokens exactly — but the <em>answer</em> tells you something about how the model sees your chat.</li><li>Take a paragraph from this book (that's ~100 words), then take a 100-word chunk of your own dense notes or a contract. Ask the AI to summarize both. Notice how the dense text takes noticeably more effort — that's tokens at work.</li><li>Next time a pasted document confuses the model, try asking it: <strong>&quot;Quote the part you found ambiguous.&quot;</strong> Often the problem isn't the content — it's which tokens got the model's attention.</li></ol>
+<h2 id="one-last-thing">One last thing</h2>
+<p>Do <strong>not</strong> worry about counting tokens precisely. Tools exist for that (see the related <code>token-budget-calculator-cli</code> project if you ever want a calculator), and Chapter 8's memory settings matter more. What you need is the <em>instinct</em>: <strong>words are cheap, weird characters are expensive, documents are the real spend, and tired old chats are the most expensive thing of all.</strong></p>
+<p><strong>Next:</strong> <a href="02-context-windows.html">Chapter 2 — The Context Window: The AI's Working Memory</a></p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="00-read-me-first.html">&larr; Read me first</a><a class="side" style="text-align:right" href="02-context-windows.html">2. The context window &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>

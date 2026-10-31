@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>Why Answers Drift — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 7. Why answers drift</p>
+<h1 id="why-answers-drift">Why Answers Drift</h1>
+<hr>
+<p>This is the chapter for the moment every long-session AI user knows:</p>
+<p>You started strong — the AI got you, it had your details, it was sharp. Then, gradually, the answers got <em>off</em>. Not wrong exactly. Generic. Or it forgot a rule you set. Or it started blending an old topic into the new one. Or it made a confident suggestion for a problem that isn't yours.</p>
+<p>That's <strong>drift</strong>. And here's the reassuring part: it's not your fault, and it's not the AI &quot;getting dumber.&quot; It's predictable behavior with predictable causes. Once you see the causes, most drift is easy to prevent or fix.</p>
+<h2 id="the-five-causes-of-drift">The five causes of drift</h2>
+<h3 id="1-attention-spread-thin">1. Attention, spread thin</h3>
+<p>An AI doesn't read its whiteboard like a person reads — it <em>weights</em> every token's relevance to the current question. The more text in the window (and the more of it that's old or off-topic), the more diluted the attention on what matters. Your carefully-worded instruction from message 2 is competing with 40 messages of chatter.</p>
+<h3 id="2-the-recencyprimacy-squeeze">2. The recency/primacy squeeze</h3>
+<p>Attention is strongest at the <strong>top</strong> (start) of the window and the <strong>bottom</strong> (most recent messages), weakest in the <strong>middle</strong>. Your ongoing task may live entirely in the mushy middle. This is why the Chapter 5 &quot;top of the chat&quot; context header is such a cheat code — it sits where attention is strongest.</p>
+<h3 id="3-old-goals-quietly-overrule-new-ones">3. Old goals quietly overrule new ones</h3>
+<p>This is the sneakiest one. If your early chat was about <em>starting</em> a project, and you've since pivoted to <em>finishing</em> it, the AI's &quot;inner goal&quot; from the early messages keeps tugging its answers back toward starting-mode. This is why it keeps suggesting beginner steps when you need finisher steps.</p>
+<h3 id="4-compaction-roulette">4. Compaction roulette</h3>
+<p>When a tool auto-compresses early messages (Chapter 3), the summary keeps what <em>seemed</em> generically important — not what <em>you</em> consider important. Your constraint (&quot;no jargon&quot;) may have looked trivially minor to the compactor and vanished. Summaries preserve the <em>gist</em>, not your specifics.</p>
+<h3 id="5-accumulated-noise">5. Accumulated noise</h3>
+<p>Small misunderstandings left uncorrected — the AI assumed &quot;Friday&quot; meant this week, you didn't correct it, three messages reference the wrong Friday, and now the whole session is quietly off-book. Drift compounds like a slight crooked frame on a road trip: miles of small wrongness.</p>
+<h2 id="how-to-notice-drift-early">How to notice drift early</h2>
+<p>Drift gives off signals before it wrecks a session:</p>
+<ul><li><strong>Rules you set fade.</strong> Formatting, tone, or length preferences stop being followed.</li><li><strong>Answers get shorter and vaguer.</strong> The AI leans on general knowledge instead of the specifics it was given.</li><li><strong>It stops asking questions.</strong> A fresh, engaged AI asks clarifying questions; a drift-y one pretends it already knows.</li><li><strong>It mixes contexts.</strong> Your work project bleeds into your weekend project — wrong tool, wrong chapter, wrong deadline.</li><li><strong>You feel it.</strong> The vague &quot;why is this suddenly work?&quot; feeling is data. Trust it.</li></ul>
+<h2 id="the-fix-in-escalating-order">The fix, in escalating order</h2>
+<p>Work up the ladder; most drifts die at step 2.</p>
+<ol><li><strong>Re-anchor.</strong> &quot;Quick reset — re-read my context header. We're focused on [X]. Confirm your understanding, then continue.&quot; (Chapter 5's re-anchor move.)</li><li><strong>Restate the instruction beside the current task.</strong> Don't say it <em>referring back</em>; say it fresh in the same message as the current request. Fresh instructions get fresh attention.</li><li><strong>Summarize and checkpoint.</strong> &quot;Summarize what we've agreed on so far in bullets.&quot; Read it. Errors reveal the smudges — and your corrected version becomes the new reference point. Paste it back in: &quot;Corrected version — use THIS as our reference.&quot;</li><li><strong>Start fresh with a handoff note</strong> (Chapter 4's closing ritual). For anything that matters and has drifted long — this one is the honest answer.</li></ol>
+<h2 id="the-prevention-habit-the-actual-takeaway">The prevention habit (the actual takeaway)</h2>
+<p>The pros prevent drift by <em>chat hygiene</em> rather than rescue:</p>
+<ul><li>One chat = one purpose. New topic, new chat.</li><li>Big pastes get cut to the needed section (Chapter 6).</li><li>Critical rules live at the top of every chat (context header), not at message 30.</li><li>Sessions get checkpoints (&quot;recap&quot;) every dozen or so messages, so the AI re-reads its own state.</li><li>Chats <em>end on purpose</em> with a handoff note, not by abandonment.</li></ul>
+<p>That's five habits, not five hundred. Chapters 4, 5, and 6 already taught all five.</p>
+<h2 id="try-this">Try this</h2>
+<ol><li>Diagnose an old chat. Open your longest, most confusing thread and find which of the five causes matches: attention spread, mid-window squeeze, old-goal tug, compaction, or noise. Naming it is weirdly satisfying.</li><li>Run a mid-drift rescue using step 3's prompt on your most painful current session. Watch how just &quot;recap, correct, re-paste&quot; fixes the fog.</li><li>Recruit a checkpoint habit: put a coda at the end of long sessions — &quot;Before we close: 5-bullet handoff note.&quot; (If you're going to do ONE thing from this manual, it's this.)</li></ol>
+<p><strong>Next:</strong> <a href="08-memory-settings.html">Chapter 8 — Memory Settings, Decoded</a></p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="06-pasting-documents.html">&larr; 6. Pasting documents</a><a class="side" style="text-align:right" href="08-memory-settings.html">8. Memory settings &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>The Context Window: The AI's Working Memory — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 2. The context window</p>
+<h1 id="the-context-window-the-ais-working-memory">The Context Window: The AI's Working Memory</h1>
+<hr>
+<p>Picture a whiteboard. Not a notebook — a <strong>whiteboard</strong>. At the start of a chat, your AI's whiteboard is spotless. Everything anyone writes during the chat goes on that whiteboard, including everything the AI itself writes. There are no sticky notes, no pages behind it, no filing cabinet in the next room.</p>
+<p>When the whiteboard fills up, something happens. Depending on the tool and model, it either:</p>
+<ol><li><strong>stops accepting new input</strong> (rare, dramatic, obvious), or</li><li><strong>quietly begins smudging the oldest writing</strong> so newer content fits (common, subtle, dangerous), or</li><li><strong>routinely &quot;compacts&quot;</strong> — compresses early messages into an automatic summary — which is closer to memory than forgetting, but <em>isn't</em> the same as remembering everything. (Chapter 3 covers this.)</li></ol>
+<p>Every tool does some mix of these. The point isn't which — it's that <strong>long chats lose old stuff, always</strong>, and no tool warns you loudly when it starts.</p>
+<h2 id="how-big-is-it">How big is it?</h2>
+<p>Context windows have grown enormously — think of it in units of <em>the number of tokens that fit on the whiteboard</em>. In rough terms (numbers change constantly, and that's the point — check your tool's docs):</p>
+<table>
+<thead><tr><th>Generation</th><th>Feel</th></tr></thead>
+<tbody>
+<tr><td>Short-book size</td><td>~10k-40k tokens — fills fast with pasted docs</td></tr>
+<tr><td>Novels-wide</td><td>~100k-200k tokens — a few hundred messages of plain chat</td></tr>
+<tr><td>Larger/enterprise sizes</td><td>feeds whole codebases, legal packets, days of thread</td></tr>
+</tbody>
+</table>
+<p>A 100-word message is around 200 tokens; some public figures matter more than precision. What actually matters for <em>you</em>:</p>
+<ul><li><strong>Plain chat doesn't fill the window very fast.</strong> Hundreds of back-and-forths fit in comfortably.</li><li><strong>Documents do.</strong> A pasted 20-page PDF can eat 15-40% of the container <em>by itself</em>.</li><li><strong>Code, tables, and data are gas-guzzlers.</strong> The AI's own long answers count, too — and if you're having it rewrite things in full, the chat fills from both sides.</li></ul>
+<h2 id="what-filling-up-actually-looks-like">What &quot;filling up&quot; actually looks like</h2>
+<p>Nobody hits a wall and gets an error. What real users notice is drift:</p>
+<ul><li>Formatting rules you set in message 2 no longer apply in message 40.</li><li>The AI starts mixing up two projects you discussed.</li><li>Answers get shorter and more generic — the model leans on its general knowledge instead of <em>your</em> specifics.</li><li>It stops asking clarifying questions, because the pile of old messages makes it feel like it already knows what you want.</li></ul>
+<p>Full chapter on that in <a href="07-why-answers-drift.html">Chapter 7</a>. The fix is the same in every case: <strong>the whiteboard, not your prompt, is the problem.</strong> Blank it (fresh chat) and restore only the important writing (your summary).</p>
+<h2 id="a-quick-map-of-what-goes-on-the-whiteboard">A quick map of what goes on the whiteboard</h2>
+<p>Everything, in rough order of how much room typical sessions take:</p>
+<ol><li><strong>Your messages</strong> — small.</li><li><strong>The AI's messages</strong> — slightly bigger, since it talks in paragraphs.</li><li><strong>Pasted documents</strong> — huge.</li><li><strong>Code blocks and tables</strong> — big.</li><li><strong>Saved memory / pinned content / custom instructions</strong> — depends on tool; some live in the room <em>before</em> the whiteboard (Chapter 8).</li></ol>
+<h2 id="try-this">Try this</h2>
+<ol><li>Open a totally fresh chat and paste <strong>only</strong> the last page of a document you're working on, then ask a question about it. Now, in a <em>second</em> fresh chat, paste the whole document and ask the same question. Compare answers. Notice how much <em>cleaner</em> the small-context answer often is — extra context can be noise as much as fuel.</li><li>In a long-running chat, ask: <strong>&quot;Recap what we've decided so far in bullet points.&quot;</strong> The AI works from its whiteboard, so you'll see exactly what it's holding — including anything it <em>thinks</em> you've decided that you haven't.</li><li>Next time a long chat starts feeling cloudy, resist the urge to type &quot;remember, as I said earlier…&quot; — that's just writing on an already-smudged section. Instead, do a fresh-chat restart with a hand-built summary (Chapter 5).</li></ol>
+<p><strong>Next:</strong> <a href="03-chat-memory.html">Chapter 3 — Chat Memory: Across the Chat, and Across Chats</a></p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="01-tokens.html">&larr; 1. Tokens</a><a class="side" style="text-align:right" href="03-chat-memory.html">3. Chat memory &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>

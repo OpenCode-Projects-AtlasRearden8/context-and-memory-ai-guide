@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A friend-toned manual for the part of AI nobody explains — context windows, tokens, and chat memory.">
+<title>Chat Memory: Across the Chat, and Across Chats — Context &amp; Memory: The AI Guide Nobody Passed to You</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap" style="max-width:46rem;margin:0 auto;padding:0.9rem 1.25rem">
+<a href="index.html">Context &amp; Memory</a>
+<span class="tag">the AI guide nobody passed to you</span>
+</div></header>
+<main>
+<p class="crumbs"><a href="index.html">Reading guide</a> &middot; 3. Chat memory</p>
+<h1 id="chat-memory-across-the-chat-and-across-chats">Chat Memory: Across the Chat, and Across Chats</h1>
+<hr>
+<p>&quot;Memory&quot; gets thrown around a lot with AI, and it means two completely different things. Knowing which one you're talking about is half the battle.</p>
+<h2 id="memory-1-inside-one-chat-the-whiteboard">Memory #1: Inside one chat — the whiteboard</h2>
+<p>Within a single chat, the AI remembers everything on the whiteboard (Chapter 2). This memory is:</p>
+<ul><li><strong>Immediate</strong> — anything you say is &quot;known&quot; for the rest of that chat.</li><li><strong>Fragile at the edges</strong> — the oldest stuff is the first to smudge as the window fills.</li><li><strong>Weaker than it feels.</strong> The AI doesn't weight every old message the way you'd hope. The most recent messages and anything you've emphasized get the most attention.</li></ul>
+<p>So &quot;remember what I said about the deadline&quot; works <em>great</em> at message 5 and progressively worse at message 80.</p>
+<h2 id="memory-2-across-chats-separate-rooms">Memory #2: Across chats — separate rooms</h2>
+<p>Start a new chat and you get a clean whiteboard in a new room. <strong>It does not know what happened in the last chat.</strong> This is the single most common beginner confusion — people say &quot;but I told it that yesterday!&quot; across sessions and feel betrayed.</p>
+<p>Modern assistants bolt on some cross-chat memory with varying levels of ambition:</p>
+<table>
+<thead><tr><th>Memory type</th><th>How it behaves</th><th>Typical example</th></tr></thead>
+<tbody>
+<tr><td><strong>Saved/memories</strong></td><td>Small facts pinned across chats (&quot;user is an eBay reseller&quot;)</td><td>&quot;Remember that I go by Dylan&quot;</td></tr>
+<tr><td><strong>Auto-memory / recap on new chats</strong></td><td>Tool summarizes old conversations and hands the summary to new chats</td><td>You open a new chat and it nods like a coworker</td></tr>
+<tr><td><strong>Provider-level sync (account settings)</strong></td><td>Profile, plans, custom instructions applied everywhere</td><td>Tone, role, standing preferences</td></tr>
+<tr><td><strong>Everything else</strong></td><td>Gone with the chat</td><td>Your project details unless you carry them</td></tr>
+</tbody>
+</table>
+<p>These differ <strong>per tool</strong>, wildly — Chapter 8 is the decoder ring. What's universal:</p>
+<ul><li>Cross-chat memory, when it exists, is <em>summaries and facts</em>, not full transcripts.</li><li>You can usually inspect what's been saved (and be surprised — sometimes the tool remembers things you'd rather it hadn't; you can typically view and delete items).</li><li>The <em>work</em> memory — the decisions, files, half-formed ideas of your project — never travels automatically. That's yours to carry, and Chapter 5 shows the carry technique.</li></ul>
+<h2 id="the-mental-model-that-makes-this-click">The mental model that makes this click</h2>
+<p>Think of your AI sessions like <strong>working with a smart temp agency</strong>:</p>
+<ul><li>Inside a shift (one chat), your temp is sharp and remembers everything on the job sheet.</li><li>The agency has a <em>profile</em> on you (cross-chat memory): &quot;prefers concise answers, works nights, junior developer.&quot;</li><li>But the temp from Tuesday doesn't know what happened at Monday's shift — you have to hand over a briefing sheet.</li></ul>
+<p>The whole reason briefing sheets exist. Chapter 5 is yours.</p>
+<h2 id="what-about-compaction">What about &quot;compaction&quot;?</h2>
+<p>Some tools, when a chat gets long, compress early turns into an internal running summary — sometimes shown as a &quot;compacted&quot; or &quot;summarized&quot; state. That's the tool doing exactly the Chapter 5 move automatically, and it's <em>better than smudging</em> — but it has a cost: <strong>you didn't choose what got kept.</strong> The summary might omit the detail you thought was vital. Hand-built summaries beat auto-compaction for anything that matters.</p>
+<h2 id="a-theater-of-failure-and-the-fix">A theater of failure (and the fix)</h2>
+<p>Common story, gentlest possible version:</p>
+<ol><li>Monday: long, productive chat about a project. Ends happily.</li><li>Wednesday: opens <em>new</em> chat. Types, &quot;as we discussed…&quot; Confusion.</li><li>Reopens <em>old</em> chat. Asks new question there. The old chat is now 200 messages of half-dragged-in context, and answers start drifting.</li><li>Eventually gives up and re-explains everything. Again.</li></ol>
+<p>The fix at step 2 (and its echo at step 3) is one habit: <strong>fresh chat + hand-carried summary</strong>. That's Chapters 4 and 5, and it's the skill this whole manual exists to teach.</p>
+<h2 id="try-this">Try this</h2>
+<ol><li>In your favorite assistant's account settings, find the section called <strong>Memory</strong>, <strong>Personalization</strong>, or <strong>Data controls</strong>. Read the <em>list</em> of what's saved about you. Proceed with mild curiosity — and note the delete button while you're there. The full tour is Chapter 8.</li><li>In a brand-new chat, ask: <strong>&quot;What do you already know about me and my work?&quot;</strong> Whatever it says is the union of cross-chat memory + profile. Everything else is what <em>you</em> carry.</li><li>Pick your most confusing current long chat. Ask the AI to summarize your project in 10 bullets — then check the summary against reality. Mismatches are exactly where your whiteboard has smudged.</li></ol>
+<p><strong>Next:</strong> <a href="04-when-to-start-fresh.html">Chapter 4 — When to Start a Fresh Chat</a></p>
+
+<nav class="pager"><a class="side" style="text-align:left" href="02-context-windows.html">&larr; 2. The context window</a><a class="side" style="text-align:right" href="04-when-to-start-fresh.html">4. Fresh chats &rarr;</a></nav>
+</main>
+<footer class="site">
+<p>Context &amp; Memory: The AI Guide Nobody Passed to You</p>
+<p>Built by <a href="https://dylanasdale.github.io">Asdale Dynamics, LLC</a> &middot; Copyright (c) 2026 Asdale Dynamics, LLC &middot; MIT License</p>
+</footer>
+</body>
+</html>
